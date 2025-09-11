@@ -22,6 +22,8 @@
 	https://www.behance.net/gallery/67279127/The-Seo-Company-Free-PSD-Template 
 	and you should not provide the assets for direct download from your website.
 
+	[Alexander's note: As of 11/09/2025, the link that Mr Velázquez Rabasa has requested linking to leads to a 'resource cannot be found' page. In light of this, with a desire to give Mr Velázquez Rabasa the much-deserved credit for such an excellent template, I have linked to his Behance profile instead.]
+
 	Prohibitions
 	You do not have rights to redistribute, resell, lease, license, sub-license or offer
 	this resource to any third party «as is». If you want to use this resource as a part
@@ -112,6 +114,82 @@ section {
     margin: 2rem 0 0;
 	border-top: 1px solid #edf1f2
 }
+
+/* ensure section is a positioned container */
+#second {
+  position: relative;
+  overflow: hidden; /* hides any overflow from the pseudo element */
+  z-index: 0;
+  padding: 60px 0; /* optional spacing */
+}
+
+/* pseudo-element draws the background image behind content */
+#second::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* top:0; right:0; bottom:0; left:0; */
+  background-image: url("images/Background.png"); /* change to your image */
+  background-repeat: no-repeat;
+  background-position: center right; /* adjust as needed */
+  background-size: cover;             /* or: contain */
+  opacity: 0.12;       /* controls the "faded" look (0–1) */
+  filter: blur(2px);   /* optional soft blur */
+  transform: scale(1.03); /* avoids tiny edge seams when blurred */
+  pointer-events: none;    /* don't intercept clicks */
+  z-index: -1;             /* sits behind section content */
+}
+
+/* If you want the image only on wider screens, add a media query */
+@media (max-width: 767px) {
+  #second::before { display: none; } /* hide on small devices for readability */
+}
+
+/* ensure content sits above the pseudo element */
+#second .container,
+#second .content-box {
+  position: relative;
+  z-index: 1;
+}
+
+#second span {
+  font-weight: 400;
+  color: #0095f7;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+#third span {
+  font-weight: 400;
+  color: #0095f7;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+#fourth span {
+  font-weight: 400;
+  color: #0095f7;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+#fourth .mb-5 {
+  margin-bottom: 1.5rem !important; /* instead of 3rem */
+}
+
+/* Balance spacing */
+.heading-block p {
+  margin-top: 2.0rem;   /* space after the title */
+  margin-bottom: 2.5rem; /* equal space before the list */
+}
+
+.heading-block {
+  margin-bottom: 0; /* override Bootstrap mb-5 */
+}
+
+.course-list {
+  margin-top: 0; /* override Bootstrap mt-4 */
+}
+
 
 /* ==============================================
    2. Navbar 
